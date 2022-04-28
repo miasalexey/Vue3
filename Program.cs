@@ -32,14 +32,14 @@ builder.Services.AddScoped<PersonsInCriminalCasesService>();
 builder.Services.AddSpaStaticFiles(opt => opt.RootPath = "ClientApp/dist");
 
 const string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
-builder.Services.AddCors(options =>
+/*builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: myAllowSpecificOrigins,
         policy  =>
         {
             policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
         });
-});
+});*/
 
 
 var app = builder.Build();
@@ -59,7 +59,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
-app.UseCors(myAllowSpecificOrigins);
+/*app.UseCors(myAllowSpecificOrigins);*/
 
 
 
